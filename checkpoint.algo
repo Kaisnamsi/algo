@@ -1,0 +1,27 @@
+
+ALGORITHM checkpoint
+
+VAR
+
+length_counter :=  string;
+word_counter := string;
+vowel_counter := ch;
+
+BEGIN
+
+length_counter := 0
+word_counter := 0
+vowel_counter := 0
+
+    //The length of the sentence (the number of characters).
+    length_counter += 1
+    //The number of vowels in the sentence.
+    if char in "aeiouAEIOU":
+        vowel_counter += 1
+    //The number of words in the sentence 
+    if char == " ":
+        word_counter += 1
+    if char == ".":
+        break
+
+END
