@@ -1,15 +1,30 @@
-length_counter = 0
-word_counter = 0
-vowel_counter = 0
+ALGORITHM sentences
+VAR
+ch:char;
+sentence:string;
+sentence_counter:INTEGER;
+words_counter:INTEGER;
+vowels_counter:INTEGER;
+i:INTEGER;
+BEGIN
+sentence:="";
+words_counter:=1;
+vowels_counter:=0;
+REPEAT
+read(ch);
+sentence := sentence + ch;
+UNTIL (ch='.');
+sentence_counter := sentence.length;
+FOR i FROM 0 TO sentence.length-1 STEP 1  DO
+IF (sentence[i]=" ") THEN
+words_counter:=words_counter+1;
+END_IF
+IF (sentence[i]='a'or sentence[i]='e' or sentence[i]='u' or sentence[i]='o' or sentence[i]='i') THEN
+vowels_counter:=vowels_counter+1;
+END_IF
+END_FOR
+write(sentence_counter);
+write(words_counter);
+write(vowels_counter);
 
-    //The length of the sentence (the number of characters).
-    length_counter += 1
-    //The number of vowels in the sentence.
-    if char in "aeiouAEIOU":
-        vowel_counter += 1
-    //The number of words in the sentence 
-    if char == " ":
-        word_counter += 1
-    if char == ".":
-        break
-
+END
